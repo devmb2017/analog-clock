@@ -1,0 +1,54 @@
+/**
+ * Clock frame style
+ */
+
+.clock__frame {
+    @include vendor-prefix(transform, translate(-50%, -50%) rotate(0deg));
+    display: block;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: $small-frame-width;
+
+    &::before,
+    &::after {
+        background-color: $primary-color;
+        content: '';
+        height: $small-frame-height;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    &::before {
+        bottom: $small-frame-spacing;
+    }
+
+    &::after {
+        top: $small-frame-spacing;
+    }
+
+    &--five {
+        width: $big-frame-width;
+
+        &::before,
+        &::after {
+            height: $big-frame-height;
+        }
+
+        &::before {
+            bottom: $big-frame-spacing;
+        }
+
+        &::after {
+            top: $big-frame-spacing;
+        }
+    }
+
+    @for $i from 1 through 29 {
+        &:nth-child(#{$i + 1}) {
+            @include vendor-prefix(transform, translate(-50%, -50%) rotate($i * 6deg));
+        }
+    } 
+}

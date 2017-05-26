@@ -1,0 +1,11 @@
+/**
+ * Mixins
+ */
+
+// Vendor prefix mixin
+// adds browser prefixes to CSS3 properties
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}

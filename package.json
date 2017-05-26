@@ -1,0 +1,21 @@
+{
+  "name": "analog-clock",
+  "version": "1.0.0",
+  "description": "Analog clock with css and js",
+  "main": "scripts.js",
+  "scripts": {
+    "clock:build:css": "node-sass --include-path scss src/css/styles.scss dist/css/styles.css --output-style compressed",
+    "clock:build:js": "uglifyjs src/js/scripts.js -c -m -o dist/js/scripts.js",
+    "clock:watch:css": "nodemon -e scss -x \"npm run clock:build:css\"",
+    "clock:watch:js": "nodemon -w src/js -e js -x \"npm run clock:build:js\"",
+    "clock:build": "npm run clock:build:css & npm run clock:build:js",
+    "clock:watch": "npm run clock:watch:css & npm run clock:watch:js"
+  },
+  "author": "mihai",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "uglify-js": "^3.0.11"
+  }
+}

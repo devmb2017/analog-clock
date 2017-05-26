@@ -1,0 +1,32 @@
+/**
+ * Clock hands style
+ */
+
+.clock__hand {
+    @include vendor-prefix(transform, translate(-50%, -50%));    
+    background-color: $primary-color;
+    left: 50%;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    width: $big-frame-width;
+}
+
+.clock__hours {
+    @include vendor-prefix(transform-origin, 50% 80%);    
+    height: $hours-hand-height;
+    top: 41%;
+}
+
+.clock__minutes {
+    @include vendor-prefix(transform-origin, 50% 85%);    
+    height: $minutes-hand-height;
+    top: 36%;
+}
+
+.clock__seconds {
+    @include vendor-prefix(transform-origin, 50% 87%);    
+    background-color: $secondary-color;
+    height: $seconds-hand-height;
+    top: 33%;
+    width: $big-frame-width / 2;
+}

@@ -1,0 +1,24 @@
+/**
+ * Clock mai style
+ */
+
+.clock {
+    border: $clock-border solid $primary-color;
+    border-radius: 100%;
+    height: $clock-size;
+    margin: 3em auto;
+    position: relative;
+    width: $clock-size;
+
+    &::after {
+        @include vendor-prefix(transform, translate(-50%, -50%));
+        background-color: $secondary-color;
+        border-radius: 100%;
+        content: '';
+        height: 4%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        width: 4%;
+    }
+}
